@@ -1,0 +1,27 @@
+.dropdown{
+    width: 100px;
+    height: 16px;
+}
+.text{
+    width: 100px;
+    height: 30px; 
+}
+.table{
+    width:100%;
+    height:40%
+}
+.tablecell{
+    width:100%;
+    height:40%;
+    background-color: #3C3C3C;
+    color: white;
+}
+.items{
+    text-align: center;
+    color:white;
+    background-color: rgb(109, 105, 105);
+    padding: 2px;
+    height:50%;
+    font-size: small;
+
+}

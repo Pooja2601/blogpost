@@ -1,3 +1,6 @@
+.headerStyle{
+  background: linear-gradient(to bottom, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+}
 .App {
   text-align: center;
 }
@@ -21,10 +24,11 @@
 .App-link {
   color: #61dafb;
 }
-.AppBar{
- background-color: #FF6666 ;
+.AppBar {
+  
  height:90%;
  line-height: 40px;
+ background-clip: #FF6666;
 }
 
 @keyframes App-logo-spin {
@@ -50,14 +54,14 @@
     padding:0px;
     margin:0px;
     list-style: none;
-    display:block;
+    display:flex;
+    flex:row;
     margin:2px;
     font-size: 16px;
+    float:left;
 }
 
 .anchor{
-  float: left;
-  display:flex;
   text-decoration: none;
   padding: 0px 20px;
   line-height: 30px;

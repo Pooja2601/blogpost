@@ -1,33 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostForm from './component/PostForm'
-import AllPost from './component/AllPost';
-import Export from './component/Export';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Navbar from './component/UI/Navbar';
-import { BrowserRouter,Route } from 'react-router-dom'
-import Book from './component/Book'
+import Login from './component/Login'
+import Navigate from './Navigate'
+import fire from './config/Fire'
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = ({
+      user: null,
+    });
+    this.authListener = this.authListener.bind(this);
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    });
+  }
+  
+  
   render() {
-    return (
-      <BrowserRouter>
+  return (
+      
       <div className="App">
-      <AppBar position="static" color="primary" className="AppBar">
-      <Toolbar>
-          <Typography variant="h6" color="secondary" >
-            <Navbar/>
-          </Typography>
-      </Toolbar>
-      </AppBar>
-      <Route exact path="/" component={PostForm} />
-          <Route path="/allpost" component={AllPost} />
-          <Route path="/export" component={Export} />
-          <Route exact path="/book" component={Book} />
-      </div>
-      </BrowserRouter>
+     {this.state.user ? (<Navigate/>):(<Login/>)}
+    </div>
      
     );
   }
