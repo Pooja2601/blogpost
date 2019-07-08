@@ -41,7 +41,7 @@ logout=()=>{
           <Typography variant="h6" color="secondary" >
             <Navbar/>
           </Typography> 
-          <Button onClick={this.logout} color='inherit' style={{marginLeft:'500px'}}>LogOut</Button>
+          <Button onClick={this.logout} color='inherit' style={{marginLeft:'inherit'}}>LogOut</Button>
       </Toolbar>
       </AppBar>
       <Switch>
