@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 
 
-class PostForm extends Component{
+class ToDoForm extends Component{
     handleSubmit=(e)=>{
         e.preventDefault();
         const title=this.getTitle.value;
@@ -26,11 +26,11 @@ class PostForm extends Component{
         return(
             <div>
             <div className="post-container">
-            <h1 className="post-heading">Create Blog</h1>
+            <h1 className="post-heading">Create Todo</h1>
            
             <form className="form" onSubmit={this.handleSubmit}>
-            <input required type="text" placeholder="Enter Post Title" ref={(input)=>this.getTitle=input}/><br/><br/>
-            <textarea required row="6" col="30" placeholder="Enter Post" ref={(input)=>this.getMessage=input}/><br/><br/>
+            <input required type="text" placeholder="Enter Todo Title" ref={(input)=>this.getTitle=input}/><br/><br/>
+            <textarea required row="6" col="30" placeholder="Enter Todo" ref={(input)=>this.getMessage=input}/><br/><br/>
             <button>Post</button>
             </form>
             </div>
@@ -38,4 +38,4 @@ class PostForm extends Component{
         )
     }
 }
-export default connect()(PostForm);
+export default connect()(ToDoForm);

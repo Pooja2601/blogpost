@@ -7,9 +7,9 @@ const Navbar=() => {
     <nav>
     <div className="Container">
         <ul className="right">
-           <li><Link to={'/post'} className="anchor">PostForm</Link></li> 
+           <li><Link to={'/post'} className="anchor">Todo</Link></li> 
            {/* <li><Link to={'/login'} className="anchor">Login</Link></li>  */}
-           <li><Link to={'/allpost'} className="anchor">Blog</Link></li> 
+           <li><Link to={'/allpost'} className="anchor">Todo List</Link></li> 
            {/* <li><Link to={'/export'} className="anchor">Export</Link></li> 
            <li><Link to={'/book'} className="anchor">Book</Link></li> 
            <li><Link to={'/exportform'} className="anchor">ExportForm</Link></li>
